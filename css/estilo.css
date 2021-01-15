@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,700;1,400&display=swap");
+
+:root {
+  --backgroung: linear-gradient(135deg, #667eea7e, 0%, #764ba298 100%);
+  --color-primary: #667eea;
+  --color-secondary: #764ba2;
+  --boton-pading: 20px 40px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: hidden;
+  padding: 80px 0;
+  /*border: 1px solid red;*/
+}
+
+.subtitle {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+}
+
+/* -------------- header -----------------*/
+.hero {
+  height: 100vh;
+  background-image: var(--backgroung), url("../img/foto4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
+
+.hero .container {
+  padding: 0;
+}
+
+/*--------------nav-------------------*/
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  height: 70px;
+  align-items: center;
+  font-weight: 700;
+}
+
+.nav--footer {
+  justify-content: flex-start;
+  font-weight: 500;
+}
+
+.nav_items {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 10px 15px;
+
+  font-weight: inherit;
+}
+
+.nav_items--cta {
+  border: 2px solid #fff;
+}
+
+.nav_items--footer {
+  padding: 10px;
+  color: white;
+}
+
+/*----------texto--------------------*/
+
+.hero_container {
+  display: flex;
+  height: calc(100vh - 70px);
+  align-items: center;
+  color: #fff;
+}
+
+.hero_textos {
+  width: 80%;
+  margin-bottom: 50px;
+}
+
+.hero_title {
+  font-size: 3.2rem;
+}
+
+.hero_subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 15px 0;
+}
+
+.hero_cta {
+  display: inline-block;
+  background: #fff;
+  padding: var(--boton-pading);
+  color: var(--color-primary);
+  border-radius: 40px;
+  text-decoration: none;
+}
+
+/*----------------wave---------------*/
+.hero_weve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+}
+
+/*  -------------------------   MAIN   Presentacion--------------------------*/
+
+.Presentation {
+  text-align: center;
+  padding-top: 0;
+}
+
+.presentation_pinture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  object-position: top; /*la posicion sea de arriba*/
+}
+
+.presentation_copy {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.presentaion_cta {
+  display: inline-block;
+  margin-top: 30px;
+  color: #fff;
+  padding: var(--boton-pading);
+  border-radius: 40px;
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
+/*---------------about sobre nosotros----------------------------*/
+
+.about {
+  min-height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 70px;
+  justify-items: center; /*centar horizontalmete */
+  align-items: center; /*centar verticalmente*/
+}
+
+.about_img {
+  text-align: center;
+}
+
+.about_img--left {
+  text-align: left;
+}
+
+.about_picture {
+  max-width: 80%;
+}
+
+.about_paragraph {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/*------------------Galeria de imagenes   proyectos---------------------*/
+
+.projects {
+  background: #f2f2f2;
+}
+
+.projects_grid {
+  display: grid;
+  height: 500px;
+
+  grid-template-areas:
+    "img1 img1 img2 img3"
+    "img1 img1 img4 img5";
+  gap: 10px; /*espacioado de 10px entre filas y columnas*/
+}
+
+.projects_items {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.projects_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.projects_items:nth-of-type(4) {
+  grid-area: img1;
+}
+
+.projects_items:nth-of-type(2) {
+  grid-area: img2;
+}
+.projects_items:nth-of-type(1) {
+  grid-area: img3;
+}
+.projects_items:nth-of-type(3) {
+  grid-area: img4;
+}
+
+.projects_items:nth-of-type(5) {
+  grid-area: img5;
+}
+
+.projects_hover {
+  position: absolute;
+  background: #dc143c8c;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  display: flex; /*para centar los elementos solo para eso aqui*/
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(100%);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.projects_icon {
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.projects_items:hover .projects_hover {
+  /*Cuando ponga el maus por items se active el hoover de sacar todo*/
+  transform: translateX(0%);
+}
+
+/*-------------------------Testimony Tesrimonios---------------------------*/
+
+.testimony_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.testimony_items {
+  width: 95%;
+  background-color: var(--color-secondary);
+  border-radius: 7px;
+  margin: 0 auto;
+  padding: 30px 25px;
+  box-shadow: 0 8px 10px rgba(66, 66, 66, 0.5);
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.testimony_person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.testimony_img {
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-right: 30px;
+}
+
+.testimony_name {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+.testimony_verification {
+  color: #e0afa0;
+  font-weight: 700;
+}
+
+/*-------------------footer----------------------*/
+
+.footer {
+  background-color: var(--color-primary);
+}
+
+.footer_grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer_title {
+  font-weight: 400;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.footer_icon {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer_container-icons {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  color: white;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.footer_container-icons a {
+  color: inherit;
+  font-size: 30px;
+  text-decoration: none;
+  line-height: 60px;
+}
+
+/*-----------Responsive Design     Media Query  para tamaños------------*/
+
+@media screen and (max-width: 800px) {
+  :root {
+    --boton-pading: 18px 40px;
+  }
+  .nav {
+    justify-content: space-around;
+  }
+
+  .nav_items--cta {
+    border: none;
+  }
+
+  .nav_items {
+    font-weight: 400;
+    border-bottom: 1px solid #fff;
+    margin-right: 0;
+  }
+
+  .nav_items--footer {
+    border: none;
+  }
+  .hero_textos {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+
+  .hero_title {
+    font-size: 2.5rem;
+  }
+  .hero_subtitle {
+    font-size: 1.5rem;
+  }
+
+  .presentation_copy {
+    width: 100%;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    padding-top: 30px;
+  }
+
+  .about_img--left {
+    text-align: center;
+  }
+
+  .about_texts:last-child {
+    grid-row: 3/4;
+  }
+
+  /*my proyecto*/
+
+  .projects_grid {
+    grid-template-areas:
+      "img1 img1 img2 img2"
+      "img1 img1 img3 img3"
+      "img4 img4 img5 img5";
+  }
+  .testimony_grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .testimony_items {
+    margin-bottom: 30px;
+  }
+
+  /*footer*/
+  .footer_grid {
+    grid-template-columns: 1fr;
+  }
+  .footer_cotact {
+    grid-row: 1/2;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --boton-padding: 18px 35px;
+  }
+  .subtitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 15px;
+  }
+
+  .nav_items {
+    padding: 0 10px;
+    border: 0;
+  }
+
+  .hero_textos {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  .hero_title {
+    font-size: 2rem;
+  }
+
+  /*about*/
+
+  .presentation_pinture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about {
+    row-gap: 60px;
+  }
+
+  .container {
+    padding-top: 10px;
+  }
+
+  /*my projects*/
+
+  .projects_grid {
+    grid-template-areas:
+      "img1"
+      "img2"
+      "img3"
+      "img4"
+      "img5";
+    height: auto;
+    grid-template-rows: repeat(5, 250px);
+    grid-auto-rows: 250px; /*para nuevas implicitas*/
+    gap: 10px;
+  }
+
+  /*testemony*/
+  .testemony_item {
+    padding: 30px 15px;
+  }
+  .testimony_person {
+    flex-direction: column;
+  }
+  .testimony_text {
+    text-align: center;
+  }
+
+  .testimony_img {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
